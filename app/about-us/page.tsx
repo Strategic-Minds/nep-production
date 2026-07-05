@@ -45,7 +45,7 @@ export default function AboutPage() {
               Start Digital Bid →
             </Link>
           </div>
-          <div className="relative overflow-hidden rounded-lg border border-border">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
             <img src={SITE_IMAGES.patioOverlay} alt="National Epoxy Pros installation" className="h-full w-full object-cover" />
             <p className="absolute bottom-0 left-0 right-0 bg-background/80 px-3 py-1 text-[10px] text-muted-foreground">
               {AI_IMAGE_DISCLOSURE}

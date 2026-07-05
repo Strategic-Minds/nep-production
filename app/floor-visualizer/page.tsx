@@ -23,7 +23,7 @@ export default function FloorVisualizerPage() {
         </p>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_1fr]">
-          <div className="relative overflow-hidden rounded-lg border border-border">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
             <img src={SITE_IMAGES.metallicShowroom} alt={`${selected.name} preview`} className="h-full w-full object-cover" />
             <div
               className="absolute inset-0 mix-blend-multiply opacity-40"

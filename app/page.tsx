@@ -46,7 +46,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-lg border border-border">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
             <img
               src={SITE_IMAGES.heroGarage}
               alt="Enterprise epoxy garage floor system"
@@ -140,7 +140,7 @@ export default function HomePage() {
       {/* VISUALIZER */}
       <section className="border-b border-border py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:items-center">
-          <div className="relative overflow-hidden rounded-lg border border-border">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
             <img src={SITE_IMAGES.retailFloor} alt="Floor visualizer preview" className="h-full w-full object-cover" />
             <p className="absolute bottom-0 left-0 right-0 bg-background/80 px-3 py-1 text-[10px] text-muted-foreground">
               {AI_IMAGE_DISCLOSURE}

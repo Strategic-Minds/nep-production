@@ -10,7 +10,7 @@ export default function ContactPage() {
 
       <section className="border-b border-border">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <div className="relative order-2 overflow-hidden rounded-lg border border-border lg:order-1">
+          <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-lg border border-border lg:order-1">
             <img src={SITE_IMAGES.metallicShowroom} alt="Talk to a National Epoxy Pros specialist" className="h-full w-full object-cover" />
             <p className="absolute bottom-0 left-0 right-0 bg-background/80 px-3 py-1 text-[10px] text-muted-foreground">
               {AI_IMAGE_DISCLOSURE}
