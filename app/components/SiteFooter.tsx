@@ -26,8 +26,7 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li><Link href="/digital-bid" className="hover:text-foreground">Digital Bid</Link></li>
             <li><Link href="/contact-us" className="hover:text-foreground">Contact Us</Link></li>
-            <li><Link href="/sign-in" className="hover:text-foreground">My Dashboard</Link></li>
-          </ul>
+                      </ul>
         </div>
         <div>
           <p className="text-xs font-extrabold uppercase tracking-wider text-primary">Contact</p>

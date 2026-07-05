@@ -26,9 +26,6 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link href="/sign-in" className="text-foreground/80 hover:text-primary">
-            My Dashboard
-          </Link>
         </nav>
 
         <Link
