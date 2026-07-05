@@ -17,8 +17,9 @@ export function generateStaticParams() {
   return serviceSystems.map((s) => ({ slug: s.slug }));
 }
 
-export default function FloorSystemPage({ params }: { params: { slug: string } }) {
-  const system = serviceSystems.find((s) => s.slug === params.slug);
+export default async function FloorSystemPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const system = serviceSystems.find((s) => s.slug === slug);
   if (!system) return notFound();
 
   return (
