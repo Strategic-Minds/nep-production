@@ -2,9 +2,12 @@ import Link from 'next/link';
 import { BRAND } from '@/lib/brand';
 
 const NAV = [
-  { label: 'Gallery', href: '/gallery' },
+  { label: 'Floor Systems', href: '/floor-systems' },
   { label: 'Design Center', href: '/design' },
-  { label: 'How It Works', href: '/digital-bid' },
+  { label: 'Visualizer', href: '/floor-visualizer' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'Training', href: '/training' },
+  { label: 'Gallery', href: '/gallery' },
 ];
 
 export function SiteHeader() {
@@ -20,7 +23,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 text-sm font-bold md:flex">
+        <nav className="hidden items-center gap-6 text-sm font-bold lg:flex">
           {NAV.map((item) => (
             <Link key={item.href} href={item.href} className="text-foreground/80 hover:text-primary">
               {item.label}

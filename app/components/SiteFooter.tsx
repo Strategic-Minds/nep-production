@@ -14,25 +14,32 @@ export function SiteFooter() {
           </p>
         </div>
         <div>
-          <p className="text-xs font-extrabold uppercase tracking-wider text-primary">Company</p>
+          <p className="text-xs font-extrabold uppercase tracking-wider text-primary">Explore</p>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li><Link href="/about-us" className="hover:text-foreground">About Us</Link></li>
-            <li><Link href="/gallery" className="hover:text-foreground">Gallery</Link></li>
+            <li><Link href="/floor-systems" className="hover:text-foreground">Floor Systems</Link></li>
             <li><Link href="/design" className="hover:text-foreground">Design Center</Link></li>
+            <li><Link href="/floor-visualizer" className="hover:text-foreground">Visualizer</Link></li>
+            <li><Link href="/gallery" className="hover:text-foreground">Gallery</Link></li>
+            <li><Link href="/products" className="hover:text-foreground">Products</Link></li>
           </ul>
         </div>
         <div>
-          <p className="text-xs font-extrabold uppercase tracking-wider text-primary">Get Started</p>
+          <p className="text-xs font-extrabold uppercase tracking-wider text-primary">Company</p>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li><Link href="/digital-bid" className="hover:text-foreground">Digital Bid</Link></li>
-            <li><Link href="/contact-us" className="hover:text-foreground">Contact Us</Link></li>
-                      </ul>
+            <li><Link href="/about-us" className="hover:text-foreground">About Us</Link></li>
+            <li><Link href="/locations" className="hover:text-foreground">Locations</Link></li>
+            <li><Link href="/training" className="hover:text-foreground">Training</Link></li>
+            <li><Link href="/business-packages" className="hover:text-foreground">Business Packages</Link></li>
+            <li><Link href="/reviews" className="hover:text-foreground">Reviews</Link></li>
+          </ul>
         </div>
         <div>
           <p className="text-xs font-extrabold uppercase tracking-wider text-primary">Contact</p>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            <li><Link href="/digital-bid" className="hover:text-foreground">Digital Bid</Link></li>
+            <li><Link href="/contact-us" className="hover:text-foreground">Contact Us</Link></li>
             <li>{BRAND.phone}</li>
-            <li>{BRAND.email}</li>
+            <li>{BRAND.leadsEmail}</li>
             <li>{BRAND.corporateAddress}</li>
           </ul>
         </div>
