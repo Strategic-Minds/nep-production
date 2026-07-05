@@ -5,8 +5,17 @@ import { getUser, getTeamForUser } from '@/lib/db/queries';
 import { SWRConfig } from 'swr';
 
 export const metadata: Metadata = {
-  title: 'Next.js SaaS Starter',
-  description: 'Get started quickly with Next.js, Postgres, and Stripe.'
+  title: 'National Epoxy Pros | Epoxy & Concrete Coating Network',
+  description:
+    'Digital bid in minutes. Real-time job tracking. Lifetime warranty. National Epoxy Pros installs premium epoxy, metallic, quartz, and polished concrete floors — powered by Xtreme Polishing Systems.',
+  openGraph: {
+    title: 'National Epoxy Pros',
+    description:
+      'Digital bid in minutes. Real-time job tracking. Lifetime warranty.',
+    images: [
+      'https://base44.app/api/apps/6a3a1cc6fda8cc665dd22ea4/files/mp/public/6a3a1cc6fda8cc665dd22ea4/695ab0612_img5_garage_epoxy.png'
+    ]
+  }
 };
 
 export const viewport: Viewport = {
@@ -21,11 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`bg-white dark:bg-gray-950 text-black dark:text-white ${manrope.className}`}
-    >
-      <body className="min-h-[100dvh] bg-gray-50">
+    <html lang="en" className={`dark ${manrope.className}`}>
+      <body className="min-h-[100dvh] bg-background text-foreground">
         <SWRConfig
           value={{
             fallback: {
