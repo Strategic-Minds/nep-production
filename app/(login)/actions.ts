@@ -52,16 +52,25 @@ const signInSchema = z.object({
 export const signIn = validatedAction(signInSchema, async (data, formData) => {
   const { email, password } = data;
 
-  const userWithTeam = await db
-    .select({
-      user: users,
-      team: teams
-    })
-    .from(users)
-    .leftJoin(teamMembers, eq(users.id, teamMembers.userId))
-    .leftJoin(teams, eq(teamMembers.teamId, teams.id))
-    .where(eq(users.email, email))
-    .limit(1);
+  let userWithTeam;
+  try {
+    userWithTeam = await db
+      .select({
+        user: users,
+        team: teams
+      })
+      .from(users)
+      .leftJoin(teamMembers, eq(users.id, teamMembers.userId))
+      .leftJoin(teams, eq(teamMembers.teamId, teams.id))
+      .where(eq(users.email, email))
+      .limit(1);
+  } catch (err) {
+    return {
+      error: 'Customer portal login is not yet available. Please contact support at (877) 958-6408.',
+      email,
+      password
+    };
+  }
 
   if (userWithTeam.length === 0) {
     return {
@@ -109,11 +118,20 @@ const signUpSchema = z.object({
 export const signUp = validatedAction(signUpSchema, async (data, formData) => {
   const { email, password, inviteId } = data;
 
-  const existingUser = await db
-    .select()
-    .from(users)
-    .where(eq(users.email, email))
-    .limit(1);
+  let existingUser;
+  try {
+    existingUser = await db
+      .select()
+      .from(users)
+      .where(eq(users.email, email))
+      .limit(1);
+  } catch (err) {
+    return {
+      error: 'Customer portal sign-up is not yet available. Please contact support at (877) 958-6408.',
+      email,
+      password
+    };
+  }
 
   if (existingUser.length > 0) {
     return {
