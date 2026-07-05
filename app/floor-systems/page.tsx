@@ -7,9 +7,11 @@ import { serviceSystems } from '@/lib/site-content';
 const IMAGE_MAP: Record<string, string> = {
   'flake-epoxy': SITE_IMAGES.garageEpoxy,
   'metallic-epoxy': SITE_IMAGES.metallicShowroom,
-  'polished-concrete': SITE_IMAGES.retailFloor,
+  'quartz-epoxy': SITE_IMAGES.retailFloor,
+  'solid-color-epoxy': SITE_IMAGES.garageEpoxy,
   'stained-concrete': SITE_IMAGES.patioOverlay,
-  'concrete-countertops': SITE_IMAGES.retailFloor
+  'polished-concrete': SITE_IMAGES.retailFloor,
+  'concrete-countertops': SITE_IMAGES.countertop
 };
 
 export default function FloorSystemsPage() {

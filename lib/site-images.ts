@@ -3,10 +3,12 @@
 // disclosure policy) pending real installed-project photography. Swap
 // these out for real jobsite photos as they come in from the field.
 export const SITE_IMAGES = {
-  garageEpoxy: 'https://media.base44.com/images/public/6a3a1cc6fda8cc665dd22ea4/dbf9f6d5c_generated_image.png',
-  retailFloor: 'https://media.base44.com/images/public/6a3a1cc6fda8cc665dd22ea4/cfecf2e51_generated_image.png',
-  metallicShowroom: 'https://media.base44.com/images/public/6a3a1cc6fda8cc665dd22ea4/52ae43790_generated_image.png',
-  patioOverlay: 'https://media.base44.com/images/public/6a3a1cc6fda8cc665dd22ea4/a501b2dec_generated_image.png',
+  garageEpoxy: 'https://base44.app/api/apps/6a3a1cc6fda8cc665dd22ea4/files/mp/public/6a3a1cc6fda8cc665dd22ea4/699680451_garage_flake.png',
+  retailFloor: 'https://base44.app/api/apps/6a3a1cc6fda8cc665dd22ea4/files/mp/public/6a3a1cc6fda8cc665dd22ea4/7148289e0_retail_polished_1.png',
+  metallicShowroom: 'https://base44.app/api/apps/6a3a1cc6fda8cc665dd22ea4/files/mp/public/6a3a1cc6fda8cc665dd22ea4/60bead403_luxury_garage_metallic.png',
+  patioOverlay: 'https://base44.app/api/apps/6a3a1cc6fda8cc665dd22ea4/files/mp/public/6a3a1cc6fda8cc665dd22ea4/91dcec6b3_lobby_polished.png',
+  countertop: 'https://base44.app/api/apps/6a3a1cc6fda8cc665dd22ea4/files/mp/public/6a3a1cc6fda8cc665dd22ea4/9e3084892_countertop_marble.png',
+  heroGarage: 'https://base44.app/api/apps/6a3a1cc6fda8cc665dd22ea4/files/mp/public/6a3a1cc6fda8cc665dd22ea4/60bead403_luxury_garage_metallic.png'
 } as const;
 
 export const AI_IMAGE_DISCLOSURE = 'AI-generated concept image. Not an installed project photo.';

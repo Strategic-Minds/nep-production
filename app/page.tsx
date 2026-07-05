@@ -3,27 +3,7 @@ import { SiteHeader } from './components/SiteHeader';
 import { SiteFooter } from './components/SiteFooter';
 import { SITE_IMAGES, AI_IMAGE_DISCLOSURE } from '@/lib/site-images';
 import { BRAND } from '@/lib/brand';
-
-const SERVICES = [
-  { title: 'Garage Floors', sub: 'Full-broadcast flake systems built for daily wear.', img: SITE_IMAGES.garageEpoxy },
-  { title: 'Commercial Floors', sub: 'Retail, warehouse, and industrial coatings at scale.', img: SITE_IMAGES.retailFloor },
-  { title: 'Metallic & Decorative', sub: 'Showroom-grade metallic epoxy finishes.', img: SITE_IMAGES.metallicShowroom },
-  { title: 'Patios & Outdoor', sub: 'Overlay systems for patios, pool decks, and walkways.', img: SITE_IMAGES.patioOverlay },
-];
-
-const PROCESS = [
-  { n: '01', title: 'Digital Bid', sub: 'Submit photos and measurements — no in-home visit required to get started.' },
-  { n: '02', title: 'Proposal & Warranty', sub: 'A line-item proposal with lifetime warranty terms comes back by email.' },
-  { n: '03', title: 'Schedule & Prep', sub: 'Pick your finish, confirm dates, crew handles surface prep and repair.' },
-  { n: '04', title: 'Install & Sign-Off', sub: 'Live job tracker updates during install. Final walkthrough, warranty issued.' },
-];
-
-const FAQS = [
-  { q: 'How fast can I get a bid?', a: 'Most digital bids are returned within a few business hours of photo + measurement submission.' },
-  { q: 'Do you offer a warranty?', a: 'Yes — every installation is backed by a lifetime warranty on materials and workmanship.' },
-  { q: 'What areas do you serve?', a: `${BRAND.serviceFootprint} across the US, with new city launches ongoing.` },
-  { q: 'Can I track my project?', a: 'Yes. Every customer gets a live job tracker dashboard from bid through final sign-off.' },
-];
+import { serviceSystems, designCollections, proofStats } from '@/lib/site-content';
 
 export default function HomePage() {
   return (
@@ -32,117 +12,226 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border">
-        <img
-          src={SITE_IMAGES.garageEpoxy}
-          alt="Epoxy garage floor installation"
-          className="absolute inset-0 h-full w-full object-cover opacity-25"
-        />
-        <div className="relative mx-auto max-w-7xl px-6 py-28">
-          <p className="text-xs font-extrabold uppercase tracking-widest text-primary">
-            {BRAND.serviceFootprint}
-          </p>
-          <h1 className="mt-3 max-w-2xl text-5xl font-extrabold uppercase leading-[1.05] tracking-tight">
-            Floors that outlast the excuses.
-          </h1>
-          <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-            Digital bid in minutes. Lifetime warranty on every install. Track your job
-            in real time from first photo to final walkthrough.
-          </p>
-          <div className="mt-8 flex gap-4">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-widest text-primary">Enterprise</p>
+            <h1 className="mt-3 text-5xl font-extrabold uppercase leading-[1.05] tracking-tight">
+              Epoxy Flooring Systems <span className="text-primary">Built For Real Projects</span>
+            </h1>
+            <p className="mt-5 max-w-xl text-lg text-muted-foreground">
+              High-performance epoxy floor systems for commercial, industrial, and residential spaces.
+              Backed by 30+ years of expertise and nationwide service you can count on.
+            </p>
+
+            <div className="mt-8 rounded-lg border border-primary/30 bg-card p-5">
+              <p className="font-extrabold text-primary">
+                Start your digital bid and receive <span className="underline">15% OFF</span> your approved project proposal.
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">24-hour bid response guarantee. Terms apply.</p>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/digital-bid"
+                className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 text-sm font-extrabold text-primary-foreground hover:bg-primary/90"
+              >
+                Start Digital Bid →
+              </Link>
+              <Link
+                href="/design"
+                className="inline-flex h-12 items-center justify-center rounded-md border border-border px-7 text-sm font-extrabold hover:bg-accent"
+              >
+                Explore Design Center
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden rounded-lg border border-border">
+            <img
+              src={SITE_IMAGES.heroGarage}
+              alt="Enterprise epoxy garage floor system"
+              className="h-full w-full object-cover"
+            />
+            <p className="absolute bottom-0 left-0 right-0 bg-background/80 px-3 py-1 text-[10px] text-muted-foreground">
+              {AI_IMAGE_DISCLOSURE}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* STATS */}
+      <section className="border-b border-border bg-card">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 py-10 text-center md:grid-cols-4">
+          {proofStats.map((s) => (
+            <div key={s.label}>
+              <p className="text-3xl font-extrabold text-primary">{s.value}</p>
+              <p className="mt-1 text-xs font-bold uppercase tracking-wide text-muted-foreground">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FLOOR SYSTEMS GRID */}
+      <section className="border-b border-border py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center">
+            <p className="text-xs font-extrabold uppercase tracking-widest text-primary">Premium Epoxy Floor Systems</p>
+            <h2 className="mt-2 text-3xl font-extrabold uppercase tracking-tight">Choose the system that fits the space.</h2>
+          </div>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+            {serviceSystems.slice(0, 6).map((system) => (
+              <Link
+                key={system.slug}
+                href={`/floor-systems/${system.slug}`}
+                className="group overflow-hidden rounded-lg border border-border bg-card transition hover:border-primary"
+              >
+                <div className="relative h-28 overflow-hidden">
+                  <img
+                    src={SITE_IMAGES.garageEpoxy}
+                    alt={`${system.shortLabel} preview`}
+                    className="h-full w-full object-cover transition group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-3">
+                  <p className="text-sm font-extrabold">{system.shortLabel}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">{system.shortDetail}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DIGITAL BID */}
+      <section className="border-b border-border bg-card py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:items-center">
+          <div className="rounded-lg border border-border bg-background p-6">
+            <p className="text-xs font-extrabold uppercase tracking-widest text-primary">Your Project, Our Priority</p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Get a fast, easy, and accurate epoxy floor estimate in minutes with our Digital Bid System.
+              Perfect for urgent projects and tight timelines.
+            </p>
             <Link
               href="/digital-bid"
-              className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 text-sm font-extrabold text-primary-foreground hover:bg-primary/90"
+              className="mt-6 inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-sm font-extrabold text-primary-foreground hover:bg-primary/90"
             >
-              Get Your Free Bid →
+              Get My Instant Bid →
             </Link>
+          </div>
+          <div>
+            <h2 className="text-3xl font-extrabold uppercase tracking-tight">
+              Deadlines don&rsquo;t wait. <span className="text-primary">Neither should you.</span>
+            </h2>
+            <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
+              <li>✓ 24-hour bid response guarantee</li>
+              <li>✓ Accurate pricing you can trust</li>
+              <li>✓ No phone tag. No delays.</li>
+            </ul>
             <Link
-              href="/gallery"
-              className="inline-flex h-12 items-center justify-center rounded-md border border-border px-7 text-sm font-extrabold hover:bg-accent"
+              href="/digital-bid"
+              className="mt-8 inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 text-sm font-extrabold text-primary-foreground hover:bg-primary/90"
             >
-              View Gallery
+              Start My Digital Bid Now →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* TRUST BAR */}
-      <section className="border-b border-border bg-card">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 py-10 text-center md:grid-cols-4">
-          {[
-            ['Lifetime', 'Warranty'],
-            ['70+', 'Cities Nationwide'],
-            ['2,000+', 'Certified Contractors'],
-            ['Minutes', 'To Your Digital Bid'],
-          ].map(([big, small]) => (
-            <div key={small}>
-              <p className="text-3xl font-extrabold text-primary">{big}</p>
-              <p className="mt-1 text-xs font-bold uppercase tracking-wide text-muted-foreground">{small}</p>
-            </div>
-          ))}
+      {/* VISUALIZER */}
+      <section className="border-b border-border py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2 lg:items-center">
+          <div className="relative overflow-hidden rounded-lg border border-border">
+            <img src={SITE_IMAGES.retailFloor} alt="Floor visualizer preview" className="h-full w-full object-cover" />
+            <p className="absolute bottom-0 left-0 right-0 bg-background/80 px-3 py-1 text-[10px] text-muted-foreground">
+              {AI_IMAGE_DISCLOSURE}
+            </p>
+          </div>
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-widest text-primary">See It Before You Build It</p>
+            <h2 className="mt-2 text-3xl font-extrabold uppercase tracking-tight">Design your floor.</h2>
+            <p className="mt-4 text-muted-foreground">
+              Upload your space and visualize real epoxy floor styles in your environment with our visualizer.
+            </p>
+            <Link
+              href="/floor-visualizer"
+              className="mt-8 inline-flex h-12 items-center justify-center rounded-md border border-border px-7 text-sm font-extrabold hover:bg-accent"
+            >
+              Try the Visualizer →
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="mx-auto max-w-7xl px-6 py-20">
-        <p className="text-xs font-extrabold uppercase tracking-widest text-primary">Services</p>
-        <h2 className="mt-2 text-3xl font-extrabold uppercase tracking-tight">What We Install</h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map((s) => (
-            <div key={s.title} className="overflow-hidden rounded-lg border border-border bg-card">
-              <img src={s.img} alt={s.title} className="h-44 w-full object-cover" />
-              <div className="p-5">
-                <p className="font-extrabold">{s.title}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{s.sub}</p>
-              </div>
+      {/* DESIGN CENTER */}
+      <section className="border-b border-border bg-card py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex items-end justify-between">
+            <div>
+              <p className="text-xs font-extrabold uppercase tracking-widest text-primary">Design Center</p>
+              <h2 className="mt-2 text-3xl font-extrabold uppercase tracking-tight">
+                Explore colors, see 3D finishes, match your perfect floor.
+              </h2>
             </div>
-          ))}
-        </div>
-        <p className="mt-4 text-xs text-muted-foreground">{AI_IMAGE_DISCLOSURE}</p>
-      </section>
-
-      {/* PROCESS */}
-      <section className="border-y border-border bg-card">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <p className="text-xs font-extrabold uppercase tracking-widest text-primary">Process</p>
-          <h2 className="mt-2 text-3xl font-extrabold uppercase tracking-tight">How It Works</h2>
-          <div className="mt-10 grid gap-8 md:grid-cols-4">
-            {PROCESS.map((p) => (
-              <div key={p.n}>
-                <p className="text-4xl font-extrabold text-primary/40">{p.n}</p>
-                <p className="mt-3 font-extrabold">{p.title}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{p.sub}</p>
+            <Link href="/design" className="hidden text-sm font-extrabold text-primary hover:underline md:block">
+              Browse All Colors →
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {designCollections.slice(0, 4).map((item) => (
+              <div key={item.name} className="rounded-lg border border-border bg-background p-5">
+                <div className="h-16 w-full rounded-md" style={{ background: item.tone }} />
+                <p className="mt-4 font-extrabold">{item.name}</p>
+                <p className="mt-1 text-xs text-muted-foreground">{item.detail}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="mx-auto max-w-7xl px-6 py-20">
-        <p className="text-xs font-extrabold uppercase tracking-widest text-primary">FAQ</p>
-        <h2 className="mt-2 text-3xl font-extrabold uppercase tracking-tight">Common Questions</h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {FAQS.map((f) => (
-            <div key={f.q} className="rounded-lg border border-border bg-card p-6">
-              <p className="font-extrabold">{f.q}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{f.a}</p>
+      {/* GALLERY */}
+      <section className="border-b border-border py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex items-end justify-between">
+            <div>
+              <p className="text-xs font-extrabold uppercase tracking-widest text-primary">Real Projects. Real Results.</p>
+              <h2 className="mt-2 text-3xl font-extrabold uppercase tracking-tight">See the quality. Experience the difference.</h2>
             </div>
-          ))}
+            <Link href="/gallery" className="hidden text-sm font-extrabold text-primary hover:underline md:block">
+              View Gallery →
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[SITE_IMAGES.garageEpoxy, SITE_IMAGES.metallicShowroom, SITE_IMAGES.retailFloor, SITE_IMAGES.patioOverlay].map((img, i) => (
+              <div key={i} className="relative h-48 overflow-hidden rounded-lg border border-border">
+                <img src={img} alt="National Epoxy Pros project" className="h-full w-full object-cover" />
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-[10px] text-muted-foreground">{AI_IMAGE_DISCLOSURE}</p>
         </div>
       </section>
 
-      {/* CTA FOOTER BANNER */}
-      <section className="border-t border-border bg-primary">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 py-14">
-          <h2 className="max-w-xl text-3xl font-extrabold uppercase text-primary-foreground">
-            Ready for a floor that actually holds up?
-          </h2>
-          <Link
-            href="/digital-bid"
-            className="inline-flex h-12 items-center justify-center rounded-md bg-primary-foreground px-8 text-sm font-extrabold text-primary hover:bg-primary-foreground/90"
-          >
-            Get Your Free Bid →
-          </Link>
+      {/* PRODUCTS + TRAINING */}
+      <section className="py-20">
+        <div className="mx-auto grid max-w-7xl gap-6 px-6 md:grid-cols-2">
+          <div className="rounded-lg border border-border bg-card p-8">
+            <p className="text-xs font-extrabold uppercase tracking-widest text-primary">Premium Products &amp; Equipment</p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Professional-grade solutions for maximum performance and longevity.
+            </p>
+            <Link href="/products" className="mt-6 inline-flex text-sm font-extrabold text-primary hover:underline">
+              Shop Products →
+            </Link>
+          </div>
+          <div className="rounded-lg border border-border bg-card p-8">
+            <p className="text-xs font-extrabold uppercase tracking-widest text-primary">Training &amp; Contractor Success</p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Build. Grow your business. Join the network of certified pros.
+            </p>
+            <Link href="/training" className="mt-6 inline-flex text-sm font-extrabold text-primary hover:underline">
+              Learn More →
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -8,6 +8,8 @@ export const serviceSystems = [
     eyebrow: 'Garage, shop, retail, and high-traffic floors',
     description:
       'Durable, slip-resistant, and cleanable flooring systems with broadcast flake texture and a sealed protective finish.',
+    shortLabel: 'Flake Systems',
+    shortDetail: 'Durable, decorative, slip-resistant.',
     benefits: ['Durable', 'Slip resistant', 'Easy to clean', 'Custom blends', 'Fast return to use'],
     finishes: ['Domino', 'Gravel', 'Orbit', 'Tuxedo', 'Saddle Tan', 'Night']
   },
@@ -17,17 +19,32 @@ export const serviceSystems = [
     eyebrow: 'Showroom and custom interior floors',
     description:
       'Layered metallic movement for one-of-a-kind interiors, showrooms, studios, salons, and statement floors.',
+    shortLabel: 'Metallic Epoxy',
+    shortDetail: 'High-gloss, stunning 3D finishes.',
     benefits: ['3D visual depth', 'Unique finish', 'Seamless surface', 'High gloss', 'Custom colors'],
     finishes: ['Silver Mist', 'Charcoal Swirl', 'Ocean Blue', 'Copper Flow', 'Pearl White', 'Midnight']
   },
   {
-    slug: 'polished-concrete',
-    title: 'Polished Concrete Flooring Systems',
-    eyebrow: 'Commercial, retail, and modern residential floors',
+    slug: 'quartz-epoxy',
+    title: 'Quartz Epoxy Flooring Systems',
+    eyebrow: 'Commercial kitchens, healthcare, and industrial floors',
     description:
-      'Sleek, modern, long-lasting concrete refinement with low-maintenance performance and high light reflectivity.',
-    benefits: ['High reflectivity', 'Low maintenance', 'Long lasting', 'Eco friendly', 'Modern finish'],
-    finishes: ['Satin', 'Semi Gloss', 'High Gloss']
+      'Textured, tough, natural-elegance quartz broadcast systems built for demanding commercial environments.',
+    shortLabel: 'Quartz Systems',
+    shortDetail: 'Textured, tough, natural elegance.',
+    benefits: ['Slip resistant', 'Chemical resistant', 'Natural texture', 'Commercial grade', 'Low maintenance'],
+    finishes: ['Natural Stone', 'Desert Sand', 'Storm Gray', 'River Rock', 'Copper Quartz', 'Onyx Blend']
+  },
+  {
+    slug: 'solid-color-epoxy',
+    title: 'Solid Color Epoxy Systems',
+    eyebrow: 'Clean, seamless, modern, minimal floors',
+    description:
+      'Clean, seamless, modern epoxy coatings in solid tones for garages, showrooms, and commercial spaces.',
+    shortLabel: 'Solid Colors',
+    shortDetail: 'Clean, seamless, modern, minimal.',
+    benefits: ['Seamless finish', 'Custom tones', 'Easy to maintain', 'Fast install', 'Budget friendly'],
+    finishes: ['Jet Black', 'Slate Gray', 'Arctic White', 'Forest Green', 'Steel Blue', 'Sandstone']
   },
   {
     slug: 'stained-concrete',
@@ -35,8 +52,21 @@ export const serviceSystems = [
     eyebrow: 'Natural color that lasts',
     description:
       'Rich concrete color systems for interior and exterior floors where character, durability, and tone matter.',
+    shortLabel: 'Stained Concrete',
+    shortDetail: 'Rich, natural, timeless beauty.',
     benefits: ['Natural look', 'UV resistant options', 'Penetrating color', 'Interior or exterior', 'Easy care'],
     finishes: ['Gold', 'Raw Sienna', 'Terra Cotta', 'Chestnut', 'Walnut', 'Onyx']
+  },
+  {
+    slug: 'polished-concrete',
+    title: 'Polished Concrete Flooring Systems',
+    eyebrow: 'Commercial, retail, and modern residential floors',
+    description:
+      'Sleek, modern, long-lasting concrete refinement with low-maintenance performance and high light reflectivity.',
+    shortLabel: 'Polished Concrete',
+    shortDetail: 'Industrial grade. Effortlessly sleek.',
+    benefits: ['High reflectivity', 'Low maintenance', 'Long lasting', 'Eco friendly', 'Modern finish'],
+    finishes: ['Satin', 'Semi Gloss', 'High Gloss']
   },
   {
     slug: 'concrete-countertops',
@@ -44,6 +74,8 @@ export const serviceSystems = [
     eyebrow: 'Custom surfaces for kitchens, bars, and showrooms',
     description:
       'Durable concrete countertop systems with polished, stained, and decorative finish options.',
+    shortLabel: 'Countertops',
+    shortDetail: 'Custom surfaces, built to last.',
     benefits: ['Custom design', 'Heat resistant', 'Durable', 'Sealed protection', 'Beautiful finishes'],
     finishes: ['Natural Gray', 'Charcoal', 'Taupe', 'Brown', 'White']
   }
